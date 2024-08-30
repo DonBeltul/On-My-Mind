@@ -14,6 +14,11 @@ const citaSchema = new mongoose.Schema({
     hora: {
         type: String,
         required: true
+    },
+    coste: {
+        type:Number,
+        default:50,
+        max:80,
     }
 });
 
