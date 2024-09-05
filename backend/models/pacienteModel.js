@@ -27,6 +27,12 @@ const pacienteSchema = new mongoose.Schema({
         type:String,
         required: true
     },
+    citas: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'cita',
+        value: [mongoose.Schema.ObjectId],
+        default: []
+    }
 });
 const paciente = mongoose.model('paciente', pacienteSchema);
 

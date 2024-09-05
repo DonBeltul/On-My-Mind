@@ -4,7 +4,7 @@ const rentaController = require('../controllers/rentaController');
 const router = express.Router();
 
 router
-    .route('/')//Falta incluir los datos de las fechas
+    .route('/:date/:date')//Falta incluir los datos de las fechas
     .get(rentaController.getRenta)
     .post(rentaController.createRenta)
 router
