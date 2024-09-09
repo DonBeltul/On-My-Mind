@@ -48,6 +48,7 @@ exports.getSesion = catchAsync(async (req, res, next) => {
 });
 
 exports.modificarSesion = catchAsync(async (req, res, next) => {
+    console.log("Entro aqui");
     const sesion = await Sesion.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true

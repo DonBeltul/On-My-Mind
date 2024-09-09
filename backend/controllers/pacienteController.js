@@ -15,7 +15,7 @@ exports.getPacientes = catchAsync(async(req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    results: sesiones.length,
+    results: pacientes.length,
     data: {
         pacientes
     }

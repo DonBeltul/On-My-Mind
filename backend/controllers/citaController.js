@@ -15,7 +15,7 @@ exports.getCitas = catchAsync(async(req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    results: sesiones.length,
+    results: citas.length,
     data: {
         citas
     }
@@ -53,7 +53,7 @@ exports.modificarCita = catchAsync(async (req, res, next) => {
       runValidators: true
     });
   
-    if (!sesion) {
+    if (!cita) {
       return next(new AppError('No user found with that ID', 404));
     }
   

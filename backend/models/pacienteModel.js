@@ -27,13 +27,18 @@ const pacienteSchema = new mongoose.Schema({
         type:String,
         required: true
     },
-    citas: {
+    citas: { //Esto hacerlo con un find en el controlador de paciente
         type: mongoose.Schema.ObjectId,
         ref: 'cita',
-        value: [mongoose.Schema.ObjectId],
-        default: []
+        value: [mongoose.Schema.ObjectId||null],
+        default: null,
+        required: false
     }
 });
+
+//Hacer un middleware donde cuando hagas la funcion 'find', te salga un array de citas
+
 const paciente = mongoose.model('paciente', pacienteSchema);
+
 
 module.exports = paciente;
