@@ -11,7 +11,8 @@ const sesionSchema = new mongoose.Schema({
         required: [true, 'Por favor dime la fecha']
     },
     anotaciones: {
-        type:String
+        type:String,
+        required: false
     }
     
 });

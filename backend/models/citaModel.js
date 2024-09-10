@@ -17,8 +17,9 @@ const citaSchema = new mongoose.Schema({
     },
     coste: {
         type:Number,
-        default:50,
-        max:80,
+        default:60,
+        max:100,
+        required: true,
     }
 });
 

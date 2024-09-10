@@ -1,12 +1,5 @@
 const mongoose = require('mongoose');
 
-// CitasDePacientes
-// idPaciente | idCita
-// ------------------------
-// 31kh1h34kj | kj3njjfon4
-// 31kh1h34kj | kll34kkjm1
-// j4nknkjn2l | asasg99889
-
 const rentaSchema = new mongoose.Schema({
     // precio de todas las citas
 
@@ -19,25 +12,41 @@ const rentaSchema = new mongoose.Schema({
     // un total
 
     //
-    idPaciente: {
+    idUsuario : {
         type: mongoose.Schema.ObjectId,
-        ref: 'paciente',
+        ref: 'usuario',
         value: [mongoose.Schema.ObjectId],
+        required: true,
+    },
+    nombreUsuario: {
+        type: String,
+        required: true,
+    },
+    numColegiadoUsuario: {
+        type: String,
+        required: true,
+    },
+    dniUsuario: {
+        type: String,
+        required: true
+    },
+    datosPacientes : {
+        type: Array, 
+        default: [],
         required: true,
     },
     costeTotal: {
         type: Number,
         required: true
     },
-    fechaInicio: {
+    fechaInicial: {
         type: Date,
         required: true,
     },
-    fechaFin: {
+    fechaFinal: {
         type: Date,
         required: true,
     }
-    //No se que poner
 });
 
 const renta = mongoose.model('renta', rentaSchema);
